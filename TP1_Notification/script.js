@@ -21,7 +21,7 @@ function showNotification(e) {
 // ! getAndSetFuturies
 function getAndSetFuturies(e, small) {
     small.innerHTML = e.target.innerHTML.replace("Notification", "");
-    small.classList.add(e.target.className, "show-notification", "animate__bounce");
+    small.classList.add(e.target.className, "show-notification", "down_to_up", "animate__rotateInUpRight");
 }
 // ! createTheSmallTag
 function createTheSmallTag() { return document.createElement('small') }

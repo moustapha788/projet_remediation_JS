@@ -15,6 +15,7 @@
 body {
     background-color: var(--primary-color);
     height: 100vh;
+    overflow: hidden;
 }
 
 .container-btn {
@@ -59,6 +60,11 @@ body {
     align-items: center;
     border-radius: 10px;
     margin: 5px 0;
+}
+
+.down_to_up {
+    animation: animate__zoomIn 0.5s ease-in-out;
+    transition: All 0.4s ease-in-out;
 }
 
 button {
