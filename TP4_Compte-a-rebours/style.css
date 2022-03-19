@@ -1,0 +1,104 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 128, 0.5), rgba(0, 0, 128, 0.4)), url(img/snow-barring.jpg), repeat;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    /* font-size: 10em; */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ombre {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.the-year {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%) scale(1500%);
+    color: #fff;
+    z-index: 5;
+    padding: 0 10%;
+    font-family: 'Ubuntu';
+    animation: changeColor 3s infinite;
+}
+
+@keyframes changeColor {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.center-elt-hz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.around-el-hz {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.around-el-vl {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.between-el-vl {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.countdown {
+    width: 95%;
+    height: 50%;
+}
+
+.countdown h1 {
+    font-size: 7em;
+}
+
+.counting {
+    width: 80%;
+    height: 60%;
+    transform: scale(120%);
+}
+
+.timer {
+    height: 40%;
+}
+
+.timer h2 {
+    font-size: 3em;
+}
+
+.timer small {
+    font-size: 2em;
+}
