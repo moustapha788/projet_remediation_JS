@@ -3,14 +3,18 @@ const hours = document.getElementById("hours").firstElementChild;
 const minutes = document.getElementById("minutes").firstElementChild;
 const seconds = document.getElementById("seconds").firstElementChild;
 const countdownDiv = document.getElementById("countdown");
+const nextYear = document.querySelectorAll('.next-year');
+
 
 function countdown(dateButoir, days, hours, minutes, seconds) {
     const aDay = 24 * 60 * 60 * 1000;
     const aHour = 60 * 60 * 1000;
     const aMinute = 60 * 1000;
     const butoir = new Date(dateButoir).getTime();
-    const now = new Date().getTime();
-    restant = butoir - now;
+    const now = new Date();
+    const year = now.getFullYear();
+    const nowInMilli = now.getTime();
+    restant = butoir - nowInMilli;
     const d = Math.floor(restant / aDay);
     const h = Math.floor((restant % aDay) / aHour);
     const m = Math.floor((restant % aHour) / aMinute);
@@ -23,6 +27,7 @@ function countdown(dateButoir, days, hours, minutes, seconds) {
         hours.innerHTML = h;
         minutes.innerHTML = m;
         seconds.innerHTML = s;
+        nextYear.forEach(elt => elt.innerHTML = year + 1);
     }
 }
 window.addEventListener("load", () => {
