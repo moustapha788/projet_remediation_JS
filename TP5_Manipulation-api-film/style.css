@@ -1,10 +1,10 @@
 :root {
     --primary-color: #22254B;
     --secondary-color: rgba(55, 59, 105, 0.712);
-    /* --secondary-color: #373B69; */
     --overview-color: #FFF;
     --top-score: #27BB27;
     --medium-color: #F39D08;
+    --bad-color: red;
 }
 
 * {
@@ -138,6 +138,13 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+/* badge score faible */
+
+.movie-info small.red {
+    color: var(--bad-color);
 }
 
 
