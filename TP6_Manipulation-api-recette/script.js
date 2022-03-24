@@ -15,7 +15,6 @@ const main = document.getElementById("main");
 const form = document.querySelector(".header form")
 const search = document.getElementById("search");
 const fav = document.getElementById("fav");
-// const generate = document.querySelector(".generate");
 const modalContainer = document.querySelector(".modal-container");
 
 
@@ -26,22 +25,18 @@ fav.addEventListener("click", () => {
 
 
 getRecipes(API_URL);
-search.addEventListener("input", e => {
-    viderMain();
+form.addEventListener("input", e => {
     searchRecipe(e.target.value)
 });
 // asynchrous function who gets the recipes
 async function getRecipes(url) {
-    // try {
-    const response = await fetch(url);
-    const data = await response.json();
-    createCardRecipe(data["meals"]);
-    // const card = await createCardRecipe(data["meals"]);
-    main.insertAdjacentHTML("beforeend", card);
-
-    // } catch (error) {
-    // console.log(error.message);
-    // }
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        createCardRecipe(data["meals"]);
+    } catch (error) {
+        console.log(error.message);
+    }
 }
 
 function createCardRecipe(tableData) {
@@ -59,7 +54,6 @@ function createCardRecipe(tableData) {
                 ${newRecipe}
             </div>
         `;
-        // return card;
         main.insertAdjacentHTML("beforeend", card);
         const generate = document.querySelector(".generate");
         generate.addEventListener("click", () => {
@@ -67,29 +61,21 @@ function createCardRecipe(tableData) {
             getRecipes(API_URL);
         });
 
-        modalContainer.insertAdjacentHTML("beforeend", detailsList);
-        detailsRecipe.addEventListener("click", () => {
-            createDetailsRecipe(data);
-            viderModal();
-
-            const close_modal = document.querySelector(".close_modal");
-            modalContainer.classList.add("show_flex");
-            body.classList.add("innacessible_body");
-            close_modal.addEventListener("click", () => {
-                modalContainer.classList.remove("show_flex");
-                body.classList.remove("innacessible_body");
+        var detailsRecipe = document.querySelectorAll(".details_recipe");
+        detailsRecipe.forEach(detail => {
+            detail.addEventListener("click", () => {
+                const detailsList = createDetailsRecipe(data);
+                viderModal();
+                modalContainer.insertAdjacentHTML("beforeend", detailsList);
+                const close_modal = document.querySelector(".close_modal");
+                modalContainer.classList.add("show_flex");
+                body.classList.add("innacessible_body");
+                close_modal.addEventListener("click", () => {
+                    modalContainer.classList.remove("show_flex");
+                    body.classList.remove("innacessible_body");
+                });
             });
-
-
         });
-        // const detailsList = createDetailsRecipe(data);
-        // modalContainer.insertAdjacentHTML("beforeend", detailsList);
-        // const close_modal = document.querySelector(".close_modal")
-        // close_modal.addEventListener("click", () => {
-        //     modalContainer.classList.remove("show_flex");
-        //     body.classList.remove("innacessible_body");
-        // });
-
     });
 }
 
@@ -101,12 +87,13 @@ function createDetailsRecipe(data) {
         }
     }
     /* 
-    for (let i = 1; i <= 20; i++) {
-        if (data["strMeasure" + i] !== "") {
-            list += `<li>${data["strMeasure" + i]}</li>`;
-        }
-    } 
+        for (let i = 1; i <= 20; i++) {
+            if (data["strMeasure" + i] != "") {
+                list += `<li>${data["strMeasure" + i]}</li>`;
+            }
+        } 
     */
+
     const detailsList = `
         <section class="modal-details animate__jackInTheBox">
             <div class="head">
@@ -131,11 +118,12 @@ function createDetailsRecipe(data) {
             </div>
         </section>
     `;
-    modalContainer.insertAdjacentHTML("beforeend", detailsList);
+    return detailsList;
 }
 
 // search Recipe
 function searchRecipe(request) {
+    viderMain();
     getRecipes(SEARCH_BY_NAME + request);
 
     // if (request) {
