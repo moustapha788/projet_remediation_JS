@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP2_Menu-hamburger_Menu_Sous-menu</title>
+    <!-- ! lien css -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+</head>
+
+<body>
+    <aside class="mainNav  animate__slideInLeft " id="mainNav">
+        <div class="user">
+            <!-- AdminLTE 3 -->
+            <a class="presentation leave admin-LTE " id="admin-LTE" href="#">
+                <span><img src="img/admin-lte-logo.png" alt="" srcset=""></span>
+                <span class="">AdminLTE 3</span>
+            </a>
+            <!-- Alexander Pierce and the input search -->
+            <div class="presentation leave user-id ">
+                <span><img src="img/user-alexandre.jpg" alt="" srcset=""></span>
+                <span class="">Alexander Pierce</span>
+            </div>
+            <!-- search -->
+            <div class="presentation search-input" id="search-input">
+                <div>
+                    <input type="search" placeholder="Search">
+                    <span><i class="fa-solid fa-magnifying-glass fa-2x"></i></span>
+                </div>
+            </div>
+        </div>
+        <!-- the nav -->
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li class="menu-items">
+                    <a class="" href="#">
+                        <small>
+                            <span><i class="fa-solid fa-gauge-high fa-2x"></i></span>
+                        </small>
+                        <small>
+                            <span class="">Dashboard</span>
+                        </small>
+                        <small>
+                            <span class="badge-info">new</span>
+                            <span><i class="fa-solid fa-angle-left"></i></span>
+                        </small>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <section class="mainContainer" id="mainContainer">
+        <button id="burger-button" class="burger-button">
+            <i class="fa-solid fa-bars fa-3x"></i>
+        </button>
+    </section>
+    <!-- ! liens js -->
+    <script src="script.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/3043159520.js" crossorigin="anonymous" defer></script> -->
+</body>
+
+</html>

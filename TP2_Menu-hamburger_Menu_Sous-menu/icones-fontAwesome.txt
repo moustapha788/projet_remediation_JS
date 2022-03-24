@@ -1,0 +1,12 @@
+search : <i class="fa-solid fa-magnifying-glass"></i>
+angle-down: <i class="fa-solid fa-angle-down"></i>
+angle-left: <i class="fa-solid fa-angle-left"></i>
+angle-right: <i class="fa-solid fa-angle-right"></i>
+angle-up: <i class="fa-solid fa-angle-up"></i>
+charts : <i class="fa-solid fa-chart-pie"></i>
+edit : <i class="fa-solid fa-pen-to-square"></i>
+tree : <i class="fa-solid fa-tree"></i>
+table : <i class="fa-solid fa-table"></i>
+widgets  : <i class="fa-solid fa-grid"></i>
+dashboard : <i class="fa-solid fa-gauge-high"></i>
+layout: <i class="fa-solid fa-copy"></i>

@@ -1,0 +1,140 @@
+:root {
+    --bWidth: 25px;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 128, 0.61), rgba(0, 0, 128, 0.4)), url(img/ramadan-kareem.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.invisble {
+    visibility: hidden;
+}
+
+.carousel {
+    width: 900px;
+    height: 600px;
+    position: relative;
+    box-shadow: 0px 0px 6px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.scale {
+    transform: scale(120%);
+    transition: all 0.5s ease-in-out;
+}
+
+.container {
+    width: 900px;
+    height: 100%;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+
+.btn-scroll {
+    width: 90px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: animate__heartBeat 0.3s infinite;
+}
+
+.btn-scroll i {
+    color: #e74c3c;
+    opacity: 0.3;
+}
+
+.btn-scroll:hover {
+    animation: none;
+}
+
+.btn-scroll:hover i {
+    opacity: 1!important;
+    transform: scale(150%);
+    transition: all 0.3s ease;
+}
+
+.carousel:hover i {
+    opacity: 0.7;
+}
+
+#btn-left {
+    left: var(--bWidth);
+}
+
+#btn-right {
+    right: var(--bWidth);
+}
+
+.picture {
+    display: inline-block;
+    width: 900px;
+    height: 600px;
+    background-size: cover;
+    transition: all 1s ease-in-out;
+}
+
+.enlarge {
+    background-size: cover;
+    position: absolute;
+    top: 5%;
+    bottom: 5%;
+    left: 10%;
+    right: 10%;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 20;
+    cursor: pointer;
+    border: 4px solid #fff;
+    transition: all 1s ease-in-out;
+}
+
+.enlarge.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.ombre {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.ombre.visible {
+    visibility: visible!important;
+}
