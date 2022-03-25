@@ -19,8 +19,8 @@ form.addEventListener("input", e => { searchMovie(e.target.value) });
 
 
 /* 
-***********
 FUNCTIONS
+***********
 ***********
 */
 
