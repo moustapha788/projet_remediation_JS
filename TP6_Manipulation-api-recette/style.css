@@ -15,11 +15,10 @@
 body {
     background-color: var(--primary-color);
     width: 100%;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     font-family: 'Montserrat', Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.2rem;
     color: var(--secondary-color);
-    /* overflow: hidden; */
 }
 
 img {
@@ -36,8 +35,8 @@ input {
 }
 
 .innacessible_body {
-    /* height: 100vh; */
-    /* overflow: hidden; */
+    height: 100vh;
+    overflow: hidden;
     animation: animate__jackInTheBox 1s ease-in-out;
 }
 
@@ -89,7 +88,7 @@ input {
 .header form input#search {
     height: 100%;
     width: 95%;
-    border-radius: 5px;
+    border-radius: 50px;
     text-indent: 5%;
     font-size: 1.5em;
     color: var(--secondary-color);
@@ -219,11 +218,11 @@ modals
 }
 
 .modal-container {
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     border-radius: 5px;
     padding: 1%;
     z-index: 5;

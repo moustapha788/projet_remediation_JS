@@ -19,6 +19,7 @@ function countdown(dateButoir, days, hours, minutes, seconds) {
     const h = Math.floor((restant % aDay) / aHour);
     const m = Math.floor((restant % aHour) / aMinute);
     const s = Math.floor((restant % aMinute) / 1000);
+
     if (restant < 0) {
         countdownDiv.firstElementChild.innerHTML = "Bienvenue en 2023";
         clearInterval(execute);

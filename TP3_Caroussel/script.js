@@ -12,7 +12,6 @@ const ombre = document.getElementById('ombre');
 !FUNCTIONS
 */
 // ! function scrollCarousel
-
 var pos = 0;
 
 function scrollCarousel(nbr, container, btnLeft, btnRight) {
@@ -22,9 +21,8 @@ function scrollCarousel(nbr, container, btnLeft, btnRight) {
         div.classList.add("picture");
         div.style.backgroundImage = `url(img/Nataalbi_${i}.jpg)`;
         container.appendChild(div);
-
     }
-    showAndhidden();
+    showAndhidden(nbr);
     btnLeft.addEventListener("click", () => {
         if (pos > -nbr + 1) { pos--; }
         const wide = pos * 900
@@ -39,13 +37,11 @@ function scrollCarousel(nbr, container, btnLeft, btnRight) {
         container.style.transform = `translate(${wide}px)`;
         showAndhidden(nbr);
         if (pos == -nbr + 1) {
-            setTimeout(() => {
-                container.style.opacity = 0;
-            }, 7000);
-            pos = -1;
+            const latence = setInterval(() => { container.style.opacity = 0 }, 6000);
+            pos = 0;
+            setTimeout(() => { clearInterval(latence) }, 6000);
         } else {
             container.style.opacity = 1;
-
         }
     }, 5000);
     btnRight.addEventListener("click", () => {
