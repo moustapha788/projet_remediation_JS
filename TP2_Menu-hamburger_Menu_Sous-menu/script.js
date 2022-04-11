@@ -1,52 +1,5 @@
 "use strict"
 
-const menus = {
-    dashboard: {
-        firstIcon: "",
-        text: "Dashboard",
-        badge: "",
-        classBadge: "",
-    },
-    widgets: {
-        firstIcon: "Widgets",
-        text: "",
-        badge: "",
-        classBadge: "",
-    },
-    layout: {
-        firstIcon: "Layout options",
-        text: "",
-        badge: "",
-        classBadge: "",
-    },
-    charts: {
-        firstIcon: "Charts",
-        text: "",
-        badge: "",
-        classBadge: "",
-    },
-    uiElements: {
-        firstIcon: "",
-        text: "UI Elements",
-        badge: "",
-        classBadge: "",
-    },
-    forms: {
-        firstIcon: "",
-        text: "Forms",
-        badge: "",
-        classBadge: "",
-    },
-    tables: {
-        firstIcon: "",
-        text: "Tables",
-        badge: "",
-        classBadge: "",
-    },
-};
-
-
-
 // const overflowed = document.getElementsByClassName('overflowed');
 /* récupération des élémetns du DOM   */
 const mainNav = document.getElementById('mainNav');
@@ -93,20 +46,6 @@ burgerButton.addEventListener("click", () => {
 
 
 
-const li2 = createItemsMenu("fa-solid fa-gauge-high", "Charts", "6", "badge-info");
-const li3 = createItemsMenu("fa-solid fa-chart-pie", "Charts", "new", "badge-new");
-const li4 = createItemsMenu("fa-solid fa-chart-pie", "Charts", "new", "badge-new");
-const li1 = createItemsMenu("fa-solid fa-chart-pie", "Charts", "New", "badge-new");
-[li1, li2, li3, li4].forEach(li => {
-    navbar.firstElementChild.appendChild(li);
-});
-// navbar.firstElementChild.firstElementChild.appendChild(ul);
-// ul.appendChild(li);
-
-// const li1 = createItemsMenu("fa-solid fa-gauge-high fa-2x", "Dashboard", "new", "badge-info", "fa-solid fa-angle-left");
-const ul = createASubMenu();
-// navbar.firstElementChild.firstElementChild.appendChild(li1);
-
 function addProperties() {
     // the user
     document.querySelectorAll('.presentation').forEach(card => {
@@ -119,7 +58,6 @@ function addProperties() {
         const theSmall = item.firstElementChild.children;
         [theSmall[1], theSmall[2]].forEach(smalll => smalll.classList.add('undisplay'));
     });
-
 }
 
 function removeProperties() {
@@ -141,11 +79,12 @@ function getStyle(a, b) { return window.getComputedStyle(b, null)[a]; }
 
 
 
+
 function createItemsMenu(firstIcon, theText, theBadge = "", classBadge = "", angle = "") {
 
     /*variables essentielles*/
-    const closeOptions = 'fa-angle-left';
-    const openOptions = 'fa-angle-down';
+    var closeOptions = 'fa-angle-left';
+    var openOptions = 'fa-angle-down';
     /* création des li _ a _ small */
     const li = document.createElement('li');
     const a = document.createElement('a');
@@ -177,10 +116,10 @@ function createItemsMenu(firstIcon, theText, theBadge = "", classBadge = "", ang
     li.classList.add('menu-items');
     // ! text et attributs
     a.setAttribute('href', "#");
-    iSpanSmall1.className = firstIcon + " fa-2x";
+    iSpanSmall1.className = "fa-solid " + firstIcon + " fa-2x";
     spanSmall2.innerHTML = theText;
     span1Small3.innerHTML = theBadge;
-    span1Small3.classList.add(classBadge);
+    span1Small3.className = classBadge;
     iSpanSmall3.className = "fa-solid " + closeOptions;
 
 
@@ -197,12 +136,26 @@ function createItemsMenu(firstIcon, theText, theBadge = "", classBadge = "", ang
     return li;
 }
 
-function createASubMenu(params) {
-    const ul = document.createElement("ul");
-    ul.classList.add("liste_a_puces");
-    return ul;
+
+const greatUl = document.querySelector(".liste_a_puces");
+
+function createASubMenu(tabMenus) {
+    for (let i = 0; i < tabMenus.length; i++) {
+        const menu = tabMenus[i];
+        // console.log(menu.firstIcon, menu.text, menu.badge, menu.classBadge);
+
+        const li = createItemsMenu(menu.firstIcon, menu.text, menu.badge, menu.classBadge);
+        greatUl.appendChild(li);
+    }
 }
 
-function appendMenus() {
+// const li2 = createItemsMenu("fa-gauge-high", "Charts", "6", "badge-info");
+// const li3 = createItemsMenu("fa-chart-pie", "Charts", "new", "badge-new");
+// const li4 = createItemsMenu("fa-chart-pie", "Charts", "new", "badge-new");
+// const li1 = createItemsMenu("fa-chart-pie", "Charts", "New", "badge-new");
+// [li1, li2, li3, li4].forEach(li => {
+//     navbar.firstElementChild.appendChild(li);
+// });
 
-}
+
+createASubMenu(tabMenus);
