@@ -16,7 +16,7 @@ const menuItems = document.querySelectorAll(".menu-items a ");
 window.addEventListener("load", () => {
     mainNav.classList.add('enlarge-nav');
     mainContainer.classList.add('increase-content');
-    // addProperties();
+    addProperties();
 });
 //  début du survol 
 mainNav.addEventListener('mouseover', () => {
@@ -78,13 +78,12 @@ function removeProperties() {
 function getStyle(a, b) { return window.getComputedStyle(b, null)[a]; }
 
 
+/*variables essentielles*/
+var closeOptions = 'fa-angle-left';
+var openOptions = 'fa-angle-down';
 
+function createItemsMenu(firstIcon, theText, theBadge = "", classBadge = "", closeOptions = "") {
 
-function createItemsMenu(firstIcon, theText, theBadge = "", classBadge = "", angle = "") {
-
-    /*variables essentielles*/
-    var closeOptions = 'fa-angle-left';
-    var openOptions = 'fa-angle-down';
     /* création des li _ a _ small */
     const li = document.createElement('li');
     const a = document.createElement('a');
@@ -116,22 +115,12 @@ function createItemsMenu(firstIcon, theText, theBadge = "", classBadge = "", ang
     li.classList.add('menu-items');
     // ! text et attributs
     a.setAttribute('href', "#");
-    iSpanSmall1.className = "fa-solid " + firstIcon + " fa-2x";
+    iSpanSmall1.className = firstIcon + " fa-2x";
     spanSmall2.innerHTML = theText;
     span1Small3.innerHTML = theBadge;
     span1Small3.className = classBadge;
     iSpanSmall3.className = "fa-solid " + closeOptions;
 
-
-    iSpanSmall3.addEventListener('click', (e) => {
-        if (e.target.classList[1] == closeOptions) {
-            iSpanSmall3.classList.remove(closeOptions);
-            iSpanSmall3.classList.add(openOptions);
-        } else if (e.target.classList[1] == openOptions) {
-            iSpanSmall3.classList.remove(openOptions);
-            iSpanSmall3.classList.add(closeOptions);
-        }
-    });
 
     return li;
 }
@@ -139,23 +128,38 @@ function createItemsMenu(firstIcon, theText, theBadge = "", classBadge = "", ang
 
 const greatUl = document.querySelector(".liste_a_puces");
 
+
 function createASubMenu(tabMenus) {
     for (let i = 0; i < tabMenus.length; i++) {
         const menu = tabMenus[i];
-        // console.log(menu.firstIcon, menu.text, menu.badge, menu.classBadge);
 
-        const li = createItemsMenu(menu.firstIcon, menu.text, menu.badge, menu.classBadge);
+        const li = createItemsMenu(menu.firstIcon, menu.text, menu.badge, menu.classBadge, menu.closeOptions);
         greatUl.appendChild(li);
+
+        const tabSousMenu = tabMenus[i].subMenu;
+        const btnClosingAndOpening = li.firstElementChild.children[2].lastElementChild.firstElementChild;
+
+        for (let j = 0; j < tabSousMenu.length; j++) {
+            const sousMenu = tabSousMenu[j];
+            const sousLi = createItemsMenu(sousMenu.firstIcon, sousMenu.text, sousMenu.badge, sousMenu.classBadge, sousMenu.closeOptions);
+            sousLi.classList.add(`sous_li${i}`);
+            greatUl.appendChild(sousLi);
+        }
+
+
+        const lesSousLi = document.querySelectorAll(`.sous_li${i}`);
+        btnClosingAndOpening.addEventListener("click", (e) => {
+            e.target.classList.toggle("fa-angle-left");
+            e.target.classList.toggle("fa-angle-down");
+            console.log(lesSousLi);
+            lesSousLi.forEach(item => {
+                item.classList.toggle("undisplay");
+            });
+        });
+
     }
 }
 
-// const li2 = createItemsMenu("fa-gauge-high", "Charts", "6", "badge-info");
-// const li3 = createItemsMenu("fa-chart-pie", "Charts", "new", "badge-new");
-// const li4 = createItemsMenu("fa-chart-pie", "Charts", "new", "badge-new");
-// const li1 = createItemsMenu("fa-chart-pie", "Charts", "New", "badge-new");
-// [li1, li2, li3, li4].forEach(li => {
-//     navbar.firstElementChild.appendChild(li);
-// });
 
 
 createASubMenu(tabMenus);

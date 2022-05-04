@@ -10,3 +10,6 @@ table : <i class="fa-solid fa-table"></i>
 widgets  : <i class="fa-solid fa-grid"></i>
 dashboard : <i class="fa-solid fa-gauge-high"></i>
 layout: <i class="fa-solid fa-copy"></i>
+circle: 
+<i class="fa-thin fa-circle"></i>
+<i class="fa-regular fa-circle"></i>

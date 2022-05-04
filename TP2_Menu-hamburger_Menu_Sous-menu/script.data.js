@@ -1,97 +1,114 @@
+const closed = "fa-angle-left";
 const tabMenus = [{
-    firstIcon: "",
+    firstIcon: "fa-solid fa-gauge-high",
     text: "Dashboard",
-    badge: "",
-    classBadge: "",
+    badge: "6",
+    classBadge: "badge-new",
+    closeOptions: closed,
     subMenu: [{
-        firstIcon: "",
+        firstIcon: "fa-regular fa-circle",
         text: "Dashboard V1",
-        badge: "",
-        classBadge: "",
+        badge: "1",
+        classBadge: "badge-new",
+        closeOptions: "",
         subMenu: []
     }, {
-        firstIcon: "",
+        firstIcon: "fa-regular fa-circle",
         text: "Dashboard V2",
-        badge: "",
-        classBadge: "",
+        badge: "New",
+        classBadge: "badge-new",
+        closeOptions: "",
         subMenu: []
     }, {
-        firstIcon: "",
+        firstIcon: "fa-regular fa-circle",
         text: "Dashboard V3",
-        badge: "",
-        classBadge: "",
+        badge: "New",
+        classBadge: "badge-info",
+        closeOptions: "",
         subMenu: []
     }]
 }, {
-    firstIcon: "",
+    firstIcon: "fa-solid fa-gauge-high",
     text: "Widgets",
-    badge: "",
-    classBadge: "",
+    badge: "10",
+    classBadge: "badge-new",
+    closeOptions: closed,
     subMenu: []
 }, {
-    firstIcon: "",
+    firstIcon: "fa-solid fa-copy",
     text: "Layout options",
-    badge: "",
-    classBadge: "",
+    badge: "New",
+    classBadge: "badge-info",
+    closeOptions: closed,
     subMenu: [{
-        firstIcon: "",
+        firstIcon: "fa-regular fa-circle",
         text: "Top Navigation",
-        badge: "",
-        classBadge: "",
+        badge: "New",
+        classBadge: "badge-info",
+        closeOptions: "",
         subMenu: []
     }, {
-        firstIcon: "",
+        firstIcon: "fa-regular fa-circle ",
         text: "Top Navigation + Sidebar",
-        badge: "",
-        classBadge: "",
+        badge: "New",
+        classBadge: "badge-info",
+        closeOptions: "",
         subMenu: []
     }, {
-        firstIcon: "",
+        firstIcon: "fa-regular fa-circle",
         text: "Boxed",
-        badge: "",
-        classBadge: "",
+        badge: "New",
+        classBadge: "badge-info",
+        closeOptions: "",
         subMenu: []
     }, {
-        firstIcon: "",
+        firstIcon: "fa-regular fa-circle",
         text: "Fixed Sidebar",
-        badge: "",
-        classBadge: "",
+        badge: "New",
+        classBadge: "badge-info",
+        closeOptions: "",
         subMenu: []
     }, {
-        firstIcon: "",
-        text: "Fixed Sidebar + Custom",
-        badge: "",
-        classBadge: "",
+        firstIcon: "fa-regular fa-circle",
+        text: "Fixed Sidebar + Customing",
+        badge: "New",
+        classBadge: "badge-info",
+        closeOptions: "",
         subMenu: []
     }]
 }, {
-    firstIcon: "",
+    firstIcon: "fa-regular fa-circle",
     text: "Charts",
-    badge: "",
-    classBadge: "",
+    badge: "New",
+    classBadge: "badge-info",
+    closeOptions: closed,
     subMenu: []
 }, {
-    firstIcon: "",
+    firstIcon: "fa-solid fa-tree",
     text: "UI Elements",
-    badge: "",
-    classBadge: "",
+    badge: "New",
+    classBadge: "badge-info",
+    closeOptions: closed,
     subMenu: []
 }, {
-    firstIcon: "",
+    firstIcon: "fa-solid fa-pen-to-square",
     text: "Forms",
-    badge: "",
-    classBadge: "",
+    badge: "25",
+    classBadge: "badge-info",
+    closeOptions: closed,
     subMenu: []
 }, {
-    firstIcon: "",
+    firstIcon: "fa-solid fa-table",
     text: "Tables",
-    badge: "",
-    classBadge: "",
+    badge: "New",
+    classBadge: "badge-info",
+    closeOptions: closed,
     subMenu: []
 }, {
-    firstIcon: "",
-    text: "EXAMPLES",
+    firstIcon: "fa-solid ",
+    text: "Examples",
     badge: "",
     classBadge: "",
+    closeOptions: "",
     subMenu: []
 }, ];
